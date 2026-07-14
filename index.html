@@ -1,0 +1,833 @@
+/* ==========================
+   WEDZX V2 - STYLE.CSS
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#07070d;
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+/* Neon Ağ */
+
+.bg{
+
+    position:fixed;
+
+    width:100%;
+
+    height:100%;
+
+    left:0;
+
+    top:0;
+
+    background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
+    url("assets/bg.jpg") center center/cover no-repeat;
+
+    z-index:-3;
+
+}
+
+/* Siyah Katman */
+
+.overlay{
+
+    position:fixed;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.25);
+
+    z-index:-2;
+
+}
+
+/* Header */
+
+header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:25px 8%;
+
+backdrop-filter:blur(18px);
+
+background:rgba(255,255,255,.04);
+
+border-bottom:1px solid rgba(255,0,170,.25);
+
+}
+
+.logo{
+
+font-size:34px;
+
+font-family:Orbitron;
+
+font-weight:800;
+
+letter-spacing:2px;
+
+}
+
+.logo span{
+
+color:#ff2ebd;
+
+text-shadow:0 0 18px #ff2ebd;
+
+}
+
+nav{
+
+display:flex;
+
+gap:35px;
+
+}
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+transition:.35s;
+
+font-weight:500;
+
+}
+
+nav a:hover{
+
+color:#ff2ebd;
+
+text-shadow:0 0 12px #ff2ebd;
+
+}
+
+.login{
+
+background:#ff2ebd;
+
+color:white;
+
+border:none;
+
+padding:13px 28px;
+
+border-radius:14px;
+
+cursor:pointer;
+
+font-weight:600;
+
+box-shadow:0 0 25px #ff2ebd;
+
+transition:.3s;
+
+}
+
+.login:hover{
+
+transform:translateY(-3px);
+
+}
+
+/* Hero */
+
+.hero{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:80px 8%;
+
+gap:50px;
+
+}
+
+.hero-left{
+
+width:50%;
+
+}
+
+.hero-left h1{
+
+font-size:82px;
+
+font-family:Orbitron;
+
+}
+
+.hero-left h1 span{
+
+color:#ff2ebd;
+
+text-shadow:0 0 25px #ff2ebd;
+
+}
+
+.hero-left h2{
+
+margin-top:15px;
+
+font-size:24px;
+
+color:#dddddd;
+
+}
+
+.hero-left p{
+
+margin-top:22px;
+
+font-size:18px;
+
+color:#bdbdbd;
+
+line-height:1.8;
+
+}
+
+.buttons{
+
+margin-top:40px;
+
+display:flex;
+
+gap:20px;
+
+}
+
+.primary{
+
+background:#ff2ebd;
+
+padding:16px 36px;
+
+border:none;
+
+border-radius:14px;
+
+font-size:17px;
+
+color:white;
+
+cursor:pointer;
+
+box-shadow:0 0 35px #ff2ebd;
+
+transition:.3s;
+
+}
+
+.primary:hover{
+
+transform:scale(1.05);
+
+}
+
+.secondary{
+
+background:transparent;
+
+border:2px solid #ff2ebd;
+
+color:#ff2ebd;
+
+padding:16px 36px;
+
+border-radius:14px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.secondary:hover{
+
+background:#ff2ebd;
+
+color:white;
+
+}
+
+/* Kart */
+
+.card{
+
+width:430px;
+
+padding:30px;
+
+border-radius:22px;
+
+background:rgba(255,255,255,.06);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,0,170,.25);
+
+box-shadow:0 0 40px rgba(255,0,170,.18);
+
+}
+
+.card h3{
+
+margin-bottom:22px;
+
+font-size:24px;
+
+font-family:Orbitron;
+
+}
+
+.input{
+
+display:flex;
+
+flex-direction:column;
+
+margin-bottom:18px;
+
+}
+
+.input label{
+
+margin-bottom:8px;
+
+color:#ff8bd8;
+
+}
+
+.input select{
+
+padding:14px;
+
+background:#12121c;
+
+border:none;
+
+color:white;
+
+border-radius:12px;
+
+outline:none;
+
+}
+
+#generate{
+
+margin-top:20px;
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:14px;
+
+background:#ff2ebd;
+
+color:white;
+
+font-size:17px;
+
+cursor:pointer;
+
+box-shadow:0 0 30px #ff2ebd;
+
+transition:.3s;
+
+}
+
+#generate:hover{
+
+transform:scale(1.03);
+
+}
+
+/* Sonuç */
+
+.results{
+
+padding:0 8% 80px;
+
+}
+
+.result-card{
+
+padding:35px;
+
+border-radius:22px;
+
+background:rgba(255,255,255,.06);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,0,170,.25);
+
+}
+
+.result-card h3{
+
+margin-bottom:20px;
+
+font-family:Orbitron;
+
+}
+
+.result-card ul{
+
+list-style:none;
+
+}
+
+.result-card li{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:14px 0;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.result-card span{
+
+color:#ff2ebd;
+
+font-weight:700;
+
+}
+
+footer{
+
+padding:35px;
+
+text-align:center;
+
+color:#8d8d8d;
+
+}
+
+/* Mobil */
+
+@media(max-width:900px){
+
+.hero{
+
+flex-direction:column;
+
+}
+
+.hero-left{
+
+width:100%;
+
+text-align:center;
+
+}
+
+.card{
+
+width:100%;
+
+}
+
+header{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+nav{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.hero-left h1{
+
+font-size:56px;
+
+}
+
+}// ===========================
+// WEDZX V2 - script.js
+// ===========================
+
+const phones = {
+    Samsung: [
+        "Galaxy A16",
+        "Galaxy A55",
+        "Galaxy S24 Ultra"
+    ],
+    Xiaomi: [
+        "Redmi Note 13",
+        "POCO X6 Pro",
+        "Xiaomi 14"
+    ],
+    Infinix: [
+        "GT 20 Pro",
+        "Note 40 Pro"
+    ],
+    TECNO: [
+        "Pova 6",
+        "Camon 30"
+    ],
+    iPhone: [
+        "iPhone 13 Pro",
+        "iPhone 14 Pro",
+        "iPhone 15 Pro Max",
+        "iPhone 16 Pro Max"
+    ],
+    Realme: [
+        "Realme 12 Pro+",
+        "GT 6"
+    ]
+};
+
+const brand = document.getElementById("brand");
+const model = document.getElementById("model");
+
+brand.addEventListener("change", () => {
+    model.innerHTML = "";
+
+    phones[brand.value].forEach(phone => {
+        const option = document.createElement("option");
+        option.textContent = phone;
+        model.appendChild(option);
+    });
+});
+
+document.getElementById("generate").addEventListener("click", () => {
+
+    const general = random(170, 200);
+    const redDot = general - random(5, 15);
+    const scope2 = general - random(10, 20);
+    const scope4 = general - random(25, 40);
+    const sniper = random(70, 110);
+    const freeLook = random(90, 140);
+
+    animate("genel", general);
+    animate("reddot", redDot);
+    animate("scope2", scope2);
+    animate("scope4", scope4);
+    animate("sniper", sniper);
+    animate("freelook", freeLook);
+
+    glowButton();
+});
+
+function random(min, max){
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function animate(id, value){
+
+    let element = document.getElementById(id);
+
+    let start = 0;
+
+    let timer = setInterval(() => {
+
+        start++;
+
+        element.innerHTML = start;
+
+        if(start >= value){
+
+            clearInterval(timer);
+
+        }
+
+    },8);
+
+}
+
+function glowButton(){
+
+    const btn = document.getElementById("generate");
+
+    btn.innerHTML="✔ AI Tamamlandı";
+
+    btn.style.boxShadow="0 0 40px #00ff99";
+
+    setTimeout(()=>{
+
+        btn.innerHTML="AI İLE HESAPLA";
+
+        btn.style.boxShadow="0 0 30px #ff2ebd";
+
+    },2500);
+
+}// WEDZX V2 - Phone Database
+
+const phoneDatabase = {
+
+Samsung: [
+"Galaxy A15",
+"Galaxy A16",
+"Galaxy A25",
+"Galaxy A35",
+"Galaxy A55",
+"Galaxy S23",
+"Galaxy S23 Ultra",
+"Galaxy S24",
+"Galaxy S24 Ultra",
+"Galaxy Z Fold 6"
+],
+
+Xiaomi: [
+"Redmi Note 12",
+"Redmi Note 13",
+"Redmi Note 14",
+"POCO X6",
+"POCO X6 Pro",
+"POCO F6",
+"POCO F6 Pro",
+"Xiaomi 14",
+"Xiaomi 14 Ultra"
+],
+
+Infinix: [
+"GT 10 Pro",
+"GT 20 Pro",
+"Note 40",
+"Note 40 Pro"
+],
+
+TECNO: [
+"Pova 5",
+"Pova 6",
+"Camon 30",
+"Camon 30 Pro"
+],
+
+Realme: [
+"Realme 11",
+"Realme 12 Pro",
+"Realme 12 Pro+",
+"GT 6",
+"GT 7"
+],
+
+iPhone: [
+"iPhone 13",
+"iPhone 13 Pro",
+"iPhone 14",
+"iPhone 14 Pro",
+"iPhone 15",
+"iPhone 15 Pro Max",
+"iPhone 16",
+"iPhone 16 Pro",
+"iPhone 16 Pro Max"
+]
+
+};<script src="phones.js"></script>
+<script src="script.js"></script>// ==============================
+// WEDZX V2 - AI Engine
+// ai.js
+// ==============================
+
+function calculateSensitivity(device) {
+
+    let general = 180;
+
+    // RAM etkisi
+    if (device.ram >= 12) general += 8;
+    else if (device.ram >= 8) general += 5;
+    else if (device.ram >= 6) general += 2;
+    else general -= 3;
+
+    // Ekran Hz etkisi
+    if (device.refreshRate >= 120) general += 5;
+    else if (device.refreshRate >= 90) general += 2;
+
+    // Oyun stili
+    switch (device.style) {
+        case "Headshot":
+            general += 6;
+            break;
+        case "Rush":
+            general += 3;
+            break;
+        case "Ranked":
+            general -= 2;
+            break;
+        case "Sniper":
+            general -= 10;
+            break;
+        default:
+            break;
+    }
+
+    general = Math.max(120, Math.min(general, 200));
+
+    return {
+        general,
+        redDot: Math.max(0, general - 8),
+        scope2: Math.max(0, general - 15),
+        scope4: Math.max(0, general - 35),
+        sniper: Math.max(0, general - 90),
+        freeLook: Math.max(0, general - 60)
+    };
+}
+
+// Örnek kullanım:
+// const result = calculateSensitivity({
+//     ram: 8,
+//     refreshRate: 120,
+//     style: "Headshot"
+// });
+// console.log(result);// =========================
+// WEDZX V2 FINAL EFFECTS
+// =========================
+
+const generateBtn = document.getElementById("generate");
+
+generateBtn.addEventListener("click", () => {
+
+    // Loading ekranı
+    generateBtn.disabled = true;
+    generateBtn.innerHTML = "🤖 AI Analiz Ediyor...";
+
+    let progress = 0;
+
+    const loading = setInterval(() => {
+
+        progress += 10;
+
+        generateBtn.innerHTML =
+        "🤖 AI Analiz Ediyor... " + progress + "%";
+
+        if(progress >= 100){
+
+            clearInterval(loading);
+
+            const result = calculateSensitivity({
+
+                ram:8,
+
+                refreshRate:120,
+
+                style:"Headshot"
+
+            });
+
+            document.getElementById("genel").innerHTML=result.general;
+            document.getElementById("reddot").innerHTML=result.redDot;
+            document.getElementById("scope2").innerHTML=result.scope2;
+            document.getElementById("scope4").innerHTML=result.scope4;
+            document.getElementById("sniper").innerHTML=result.sniper;
+            document.getElementById("freelook").innerHTML=result.freeLook;
+
+            generateBtn.innerHTML="✔ Hazır";
+
+            setTimeout(()=>{
+
+                generateBtn.disabled=false;
+                generateBtn.innerHTML="AI İLE HESAPLA";
+
+            },2000);
+
+        }
+
+    },180);
+
+});
+
+// Kartlara giriş animasyonu
+
+const cards = document.querySelectorAll(".card,.result-card");
+
+const observer = new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+
+entry.target.style.transform="translateY(0px)";
+
+}
+
+});
+
+});
+
+cards.forEach(card=>{
+
+card.style.opacity="0";
+
+card.style.transform="translateY(50px)";
+
+card.style.transition=".8s";
+
+observer.observe(card);
+
+});
+
+// Neon logo efekti
+
+setInterval(()=>{
+
+const logo=document.querySelector(".logo");
+
+logo.style.textShadow="0 0 30px #ff2ebd";
+
+setTimeout(()=>{
+
+logo.style.textShadow="0 0 12px #ff2ebd";
+
+},700);
+
+},1500);
+
+// Arka plan hareket efekti
+
+let pos=0;
+
+setInterval(()=>{
+
+pos++;
+
+document.querySelector(".bg").style.backgroundPosition=
+`center ${pos}px`;
+
+},120);
