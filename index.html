@@ -1,833 +1,378 @@
-/* ==========================
-   WEDZX V2 - STYLE.CSS
-========================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-
-    font-family:'Poppins',sans-serif;
-
-    background:#07070d;
-
-    color:white;
-
-    overflow-x:hidden;
-
-}
-
-/* Neon Ağ */
-
-.bg{
-
-    position:fixed;
-
-    width:100%;
-
-    height:100%;
-
-    left:0;
-
-    top:0;
-
-    background:
-    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
-    url("assets/bg.jpg") center center/cover no-repeat;
-
-    z-index:-3;
-
-}
-
-/* Siyah Katman */
-
-.overlay{
-
-    position:fixed;
-
-    width:100%;
-
-    height:100%;
-
-    background:rgba(0,0,0,.25);
-
-    z-index:-2;
-
-}
-
-/* Header */
-
-header{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:25px 8%;
-
-backdrop-filter:blur(18px);
-
-background:rgba(255,255,255,.04);
-
-border-bottom:1px solid rgba(255,0,170,.25);
-
-}
-
-.logo{
-
-font-size:34px;
-
-font-family:Orbitron;
-
-font-weight:800;
-
-letter-spacing:2px;
-
-}
-
-.logo span{
-
-color:#ff2ebd;
-
-text-shadow:0 0 18px #ff2ebd;
-
-}
-
-nav{
-
-display:flex;
-
-gap:35px;
-
-}
-
-nav a{
-
-color:white;
-
-text-decoration:none;
-
-transition:.35s;
-
-font-weight:500;
-
-}
-
-nav a:hover{
-
-color:#ff2ebd;
-
-text-shadow:0 0 12px #ff2ebd;
-
-}
-
-.login{
-
-background:#ff2ebd;
-
-color:white;
-
-border:none;
-
-padding:13px 28px;
-
-border-radius:14px;
-
-cursor:pointer;
-
-font-weight:600;
-
-box-shadow:0 0 25px #ff2ebd;
-
-transition:.3s;
-
-}
-
-.login:hover{
-
-transform:translateY(-3px);
-
-}
-
-/* Hero */
-
-.hero{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:80px 8%;
-
-gap:50px;
-
-}
-
-.hero-left{
-
-width:50%;
-
-}
-
-.hero-left h1{
-
-font-size:82px;
-
-font-family:Orbitron;
-
-}
-
-.hero-left h1 span{
-
-color:#ff2ebd;
-
-text-shadow:0 0 25px #ff2ebd;
-
-}
-
-.hero-left h2{
-
-margin-top:15px;
-
-font-size:24px;
-
-color:#dddddd;
-
-}
-
-.hero-left p{
-
-margin-top:22px;
-
-font-size:18px;
-
-color:#bdbdbd;
-
-line-height:1.8;
-
-}
-
-.buttons{
-
-margin-top:40px;
-
-display:flex;
-
-gap:20px;
-
-}
-
-.primary{
-
-background:#ff2ebd;
-
-padding:16px 36px;
-
-border:none;
-
-border-radius:14px;
-
-font-size:17px;
-
-color:white;
-
-cursor:pointer;
-
-box-shadow:0 0 35px #ff2ebd;
-
-transition:.3s;
-
-}
-
-.primary:hover{
-
-transform:scale(1.05);
-
-}
-
-.secondary{
-
-background:transparent;
-
-border:2px solid #ff2ebd;
-
-color:#ff2ebd;
-
-padding:16px 36px;
-
-border-radius:14px;
-
-cursor:pointer;
-
-transition:.3s;
-
-}
-
-.secondary:hover{
-
-background:#ff2ebd;
-
-color:white;
-
-}
-
-/* Kart */
-
-.card{
-
-width:430px;
-
-padding:30px;
-
-border-radius:22px;
-
-background:rgba(255,255,255,.06);
-
-backdrop-filter:blur(18px);
-
-border:1px solid rgba(255,0,170,.25);
-
-box-shadow:0 0 40px rgba(255,0,170,.18);
-
-}
-
-.card h3{
-
-margin-bottom:22px;
-
-font-size:24px;
-
-font-family:Orbitron;
-
-}
-
-.input{
-
-display:flex;
-
-flex-direction:column;
-
-margin-bottom:18px;
-
-}
-
-.input label{
-
-margin-bottom:8px;
-
-color:#ff8bd8;
-
-}
-
-.input select{
-
-padding:14px;
-
-background:#12121c;
-
-border:none;
-
-color:white;
-
-border-radius:12px;
-
-outline:none;
-
-}
-
-#generate{
-
-margin-top:20px;
-
-width:100%;
-
-padding:16px;
-
-border:none;
-
-border-radius:14px;
-
-background:#ff2ebd;
-
-color:white;
-
-font-size:17px;
-
-cursor:pointer;
-
-box-shadow:0 0 30px #ff2ebd;
-
-transition:.3s;
-
-}
-
-#generate:hover{
-
-transform:scale(1.03);
-
-}
-
-/* Sonuç */
-
-.results{
-
-padding:0 8% 80px;
-
-}
-
-.result-card{
-
-padding:35px;
-
-border-radius:22px;
-
-background:rgba(255,255,255,.06);
-
-backdrop-filter:blur(18px);
-
-border:1px solid rgba(255,0,170,.25);
-
-}
-
-.result-card h3{
-
-margin-bottom:20px;
-
-font-family:Orbitron;
-
-}
-
-.result-card ul{
-
-list-style:none;
-
-}
-
-.result-card li{
-
-display:flex;
-
-justify-content:space-between;
-
-padding:14px 0;
-
-border-bottom:1px solid rgba(255,255,255,.08);
-
-}
-
-.result-card span{
-
-color:#ff2ebd;
-
-font-weight:700;
-
-}
-
-footer{
-
-padding:35px;
-
-text-align:center;
-
-color:#8d8d8d;
-
-}
-
-/* Mobil */
-
-@media(max-width:900px){
-
-.hero{
-
-flex-direction:column;
-
-}
-
-.hero-left{
-
-width:100%;
-
-text-align:center;
-
-}
-
-.card{
-
-width:100%;
-
-}
-
-header{
-
-flex-direction:column;
-
-gap:20px;
-
-}
-
-nav{
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-}
-
-.hero-left h1{
-
-font-size:56px;
-
-}
-
-}// ===========================
-// WEDZX V2 - script.js
-// ===========================
-
-const phones = {
-    Samsung: [
-        "Galaxy A16",
-        "Galaxy A55",
-        "Galaxy S24 Ultra"
-    ],
-    Xiaomi: [
-        "Redmi Note 13",
-        "POCO X6 Pro",
-        "Xiaomi 14"
-    ],
-    Infinix: [
-        "GT 20 Pro",
-        "Note 40 Pro"
-    ],
-    TECNO: [
-        "Pova 6",
-        "Camon 30"
-    ],
-    iPhone: [
-        "iPhone 13 Pro",
-        "iPhone 14 Pro",
-        "iPhone 15 Pro Max",
-        "iPhone 16 Pro Max"
-    ],
-    Realme: [
-        "Realme 12 Pro+",
-        "GT 6"
-    ]
-};
-
-const brand = document.getElementById("brand");
-const model = document.getElementById("model");
-
-brand.addEventListener("change", () => {
-    model.innerHTML = "";
-
-    phones[brand.value].forEach(phone => {
-        const option = document.createElement("option");
-        option.textContent = phone;
-        model.appendChild(option);
-    });
-});
-
-document.getElementById("generate").addEventListener("click", () => {
-
-    const general = random(170, 200);
-    const redDot = general - random(5, 15);
-    const scope2 = general - random(10, 20);
-    const scope4 = general - random(25, 40);
-    const sniper = random(70, 110);
-    const freeLook = random(90, 140);
-
-    animate("genel", general);
-    animate("reddot", redDot);
-    animate("scope2", scope2);
-    animate("scope4", scope4);
-    animate("sniper", sniper);
-    animate("freelook", freeLook);
-
-    glowButton();
-});
-
-function random(min, max){
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function animate(id, value){
-
-    let element = document.getElementById(id);
-
-    let start = 0;
-
-    let timer = setInterval(() => {
-
-        start++;
-
-        element.innerHTML = start;
-
-        if(start >= value){
-
-            clearInterval(timer);
-
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedzx V1 | Free Fire AI Hassasiyet Robotu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&display=swap');
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: #0b0c10;
+            background-image: radial-gradient(circle at 50% 50%, #1a0f1a 0%, #0b0c10 100%);
+        }
+        .tech-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .neon-glow {
+            text-shadow: 0 0 15px rgba(239, 68, 68, 0.8);
+        }
+        .neon-border {
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0c10;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ef4444;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-gray-200 flex flex-col justify-between">
+
+    <header class="border-b border-red-500/20 bg-black/40 backdrop-blur-md py-4 px-6">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-gradient-to-tr from-red-600 to-red-400 rounded-lg flex items-center justify-center shadow-lg shadow-red-500/30">
+                    <i class="fa-solid fa-microchip text-white text-xl animate-pulse"></i>
+                </div>
+                <div>
+                    <h1 class="tech-font text-2xl font-black tracking-widest text-red-500 neon-glow">WEDZX <span class="text-white">V1</span></h1>
+                    <p class="text-xs uppercase tracking-wider text-gray-400">Yapay Zeka Destekli Hassasiyet Algoritması</p>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-6 text-sm uppercase font-semibold">
+                <span class="text-red-500 flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-green-500 animate-ping"></span> AI AKTİF</span>
+                <span class="text-gray-400">Veritabanı v3.2.6</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-4xl w-full mx-auto p-4 md:p-8 flex flex-col justify-center">
+        
+        <div id="input-card" class="bg-black/60 backdrop-blur-md p-6 md:p-8 rounded-2xl neon-border transition-all duration-500">
+            <div class="text-center mb-8">
+                <span class="bg-red-500/10 text-red-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest border border-red-500/20">Free Fire Headshot Pro</span>
+                <h2 class="tech-font text-3xl font-extrabold text-white mt-3">CİHAZ VE OYNANIŞ ANALİZİ</h2>
+                <p class="text-gray-400 mt-2 text-sm md:text-base">AI motorunun telefonunuz için en stabil tekli vuruş (one-shot) ve tarama ayarlarını hesaplaması için bilgileri doldurun.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex flex-col">
+                    <label class="text-gray-300 font-semibold mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-mobile-screen-button text-red-500"></i> Telefon Markası
+                    </label>
+                    <select id="brand" class="bg-zinc-900 border border-zinc-700 rounded-lg p-3 text-white focus:outline-none focus:border-red-500 transition">
+                        <option value="iPhone">Apple (iOS)</option>
+                        <option value="Samsung" selected>Samsung</option>
+                        <option value="Xiaomi">Xiaomi / Poco</option>
+                        <option value="Infinix">Infinix / Tecno</option>
+                        <option value="Oppo">Oppo / Realme</option>
+                        <option value="Huawei">Huawei / Honor</option>
+                        <option value="Other">Diğer Android Cihazlar</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="text-gray-300 font-semibold mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-sliders text-red-500"></i> Model Adı / RAM Miktarı
+                    </label>
+                    <input id="model" type="text" placeholder="Örn: Poco X3 Pro, iPhone 13, A54" class="bg-zinc-900 border border-zinc-700 rounded-lg p-3 text-white focus:outline-none focus:border-red-500 transition">
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="text-gray-300 font-semibold mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-crosshairs text-red-500"></i> Oyun Stili
+                    </label>
+                    <select id="style" class="bg-zinc-900 border border-zinc-700 rounded-lg p-3 text-white focus:outline-none focus:border-red-500 transition">
+                        <option value="one-shot">Tekli Vuruş (One-Shot / Desert Eagle)</option>
+                        <option value="rush" selected>Agresif (Rush / Yakın Çatışma - SMG)</option>
+                        <option value="tactical">Taktiksel (Uzak Mesafe / AR Tarama)</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="text-gray-300 font-semibold mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-gauge-high text-red-500"></i> DPI Kullanıyor musunuz?
+                    </label>
+                    <select id="dpi-usage" class="bg-zinc-900 border border-zinc-700 rounded-lg p-3 text-white focus:outline-none focus:border-red-500 transition">
+                        <option value="yes">Evet (DPI önerisi de istiyorum)</option>
+                        <option value="no">Hayır (Sadece varsayılan ekran hassasiyeti)</option>
+                    </select>
+                </div>
+            </div>
+
+            <button onclick="startAiAnalysis()" class="w-full mt-8 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-bold py-4 rounded-xl tech-font tracking-wider text-lg shadow-lg shadow-red-600/30 active:scale-[0.98] transition">
+                HASSASİYETİ ANALİZ ET VE OLUŞTUR
+            </button>
+        </div>
+
+        <div id="loading-card" class="hidden bg-black/60 backdrop-blur-md p-10 rounded-2xl neon-border text-center flex flex-col items-center justify-center min-h-[400px]">
+            <div class="relative w-24 h-24 mb-6">
+                <div class="absolute inset-0 border-4 border-red-500/20 rounded-full"></div>
+                <div class="absolute inset-0 border-4 border-t-red-500 border-r-red-500 rounded-full animate-spin"></div>
+                <div class="absolute inset-4 flex items-center justify-center">
+                    <i class="fa-solid fa-brain text-red-500 text-3xl animate-bounce"></i>
+                </div>
+            </div>
+            <h3 class="tech-font text-xl font-bold tracking-widest text-red-500 mb-2" id="loading-title">YAPAY ZEKA BAĞLANTISI</h3>
+            <p id="loading-text" class="text-gray-400 text-sm max-w-sm h-12 flex items-center justify-center">Ekran yenileme hızı ve donanım limitleri taranıyor...</p>
+        </div>
+
+        <div id="results-card" class="hidden bg-black/60 backdrop-blur-md p-6 md:p-8 rounded-2xl neon-border transition-all duration-500">
+            <div class="flex flex-col md:flex-row justify-between items-center border-b border-zinc-800 pb-4 mb-6 gap-4">
+                <div>
+                    <h2 class="tech-font text-2xl font-black text-red-500 tracking-wider">WEDZX V1 AI RAPORU</h2>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest" id="device-output-label">Cihaz: Samsung (One-Shot Modu)</p>
+                </div>
+                <button onclick="resetApp()" class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white rounded-lg text-sm transition flex items-center gap-2">
+                    <i class="fa-solid fa-rotate-left"></i> Yeniden Hesapla
+                </button>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                <div class="bg-zinc-900/80 p-4 rounded-xl border border-zinc-800 text-center relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 h-1 bg-red-500" id="genel-bar" style="width: 0%"></div>
+                    <p class="text-xs text-gray-400 uppercase font-bold tracking-wider mb-1">Genel</p>
+                    <h4 class="tech-font text-4xl font-extrabold text-white" id="val-genel">98</h4>
+                </div>
+                <div class="bg-zinc-900/80 p-4 rounded-xl border border-zinc-800 text-center relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 h-1 bg-red-500" id="reddot-bar" style="width: 0%"></div>
+                    <p class="text-xs text-gray-400 uppercase font-bold tracking-wider mb-1">Kırmızı Nokta</p>
+                    <h4 class="tech-font text-4xl font-extrabold text-white" id="val-reddot">95</h4>
+                </div>
+                <div class="bg-zinc-900/80 p-4 rounded-xl border border-zinc-800 text-center relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 h-1 bg-red-500" id="scope2-bar" style="width: 0%"></div>
+                    <p class="text-xs text-gray-400 uppercase font-bold tracking-wider mb-1">2x Dürbün</p>
+                    <h4 class="tech-font text-4xl font-extrabold text-white" id="val-scope2">92</h4>
+                </div>
+                <div class="bg-zinc-900/80 p-4 rounded-xl border border-zinc-800 text-center relative overflow-hidden">
+                    <div class="absolute top-0 left-0 h-1 bg-red-500" id="scope4-bar" style="width: 0%"></div>
+                    <p class="text-xs text-gray-400 uppercase font-bold tracking-wider mb-1">4x Dürbün</p>
+                    <h4 class="tech-font text-4xl font-extrabold text-white" id="val-scope4">89</h4>
+                </div>
+                <div class="bg-zinc-900/80 p-4 rounded-xl border border-zinc-800 text-center relative overflow-hidden">
+                    <div class="absolute top-0 left-0 h-1 bg-red-500" id="awm-bar" style="width: 0%"></div>
+                    <p class="text-xs text-gray-400 uppercase font-bold tracking-wider mb-1">AWM Dürbünü</p>
+                    <h4 class="tech-font text-4xl font-extrabold text-white" id="val-awm">50</h4>
+                </div>
+                <div class="bg-zinc-900/80 p-4 rounded-xl border border-zinc-800 text-center relative overflow-hidden">
+                    <div class="absolute top-0 left-0 h-1 bg-red-500" id="free-bar" style="width: 0%"></div>
+                    <p class="text-xs text-gray-400 uppercase font-bold tracking-wider mb-1">Serbest Bakış</p>
+                    <h4 class="tech-font text-4xl font-extrabold text-white" id="val-free">70</h4>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div class="bg-zinc-900/40 border border-zinc-800 p-4 rounded-xl flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-circle-dot text-red-500 text-2xl"></i>
+                        <div>
+                            <h5 class="text-sm font-bold text-white">Önerilen Ateş Etme Butonu</h5>
+                            <p class="text-xs text-gray-400">Ekranın sağ altına konumlandırın</p>
+                        </div>
+                    </div>
+                    <div class="tech-font text-2xl font-bold text-red-500" id="val-btn">47%</div>
+                </div>
+
+                <div class="bg-zinc-900/40 border border-zinc-800 p-4 rounded-xl flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-arrow-up-right-dots text-red-500 text-2xl"></i>
+                        <div>
+                            <h5 class="text-sm font-bold text-white">Geliştirici DPI Ayarı</h5>
+                            <p class="text-xs text-gray-400" id="dpi-desc">Hassasiyeti artırmak için</p>
+                        </div>
+                    </div>
+                    <div class="tech-font text-2xl font-bold text-red-500" id="val-dpi">Varsayılan</div>
+                </div>
+            </div>
+
+            <div class="bg-red-500/10 border border-red-500/20 p-4 rounded-xl mb-6">
+                <h4 class="text-sm font-bold text-red-400 flex items-center gap-2 mb-2">
+                    <i class="fa-solid fa-comment-dots"></i> Wedzx V1 Yapay Zeka Notu:
+                </h4>
+                <p class="text-sm text-gray-300 leading-relaxed" id="ai-comment">
+                    Cihazınızın dokunmatik gecikme süresi analiz edilerek optimize edilmiştir.
+                </p>
+            </div>
+
+            <button onclick="copySettings()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl tech-font tracking-wider text-md transition flex items-center justify-center gap-2">
+                <i class="fa-regular fa-copy"></i> AYARLARI KOPYALA
+            </button>
+        </div>
+
+    </main>
+
+    <footer class="border-t border-zinc-900 bg-black/60 py-4 text-center text-xs text-gray-500">
+        <p>© 2026 Wedzx V1. Garena Free Fire hayran yapımı yapay zeka portalıdır. Ticari bir bağı yoktur.</p>
+    </footer>
+
+    <script>
+        const loadingTexts = [
+            "Cihazınızın donanım kimliği çözümleniyor...",
+            "Dokunmatik örnekleme hızı (Hz) kalibre ediliyor...",
+            "Wedzx V1 AI motoru hassasiyet matrisini oluşturuyor...",
+            "One-shot kafa vuruşu sürükleme katsayısı hesaplanıyor...",
+            "Optimal DPI ve ekran boyutu eşleştiriliyor..."
+        ];
+
+        function startAiAnalysis() {
+            const inputCard = document.getElementById('input-card');
+            const loadingCard = document.getElementById('loading-card');
+            const resultsCard = document.getElementById('results-card');
+
+            // Ekran geçişi
+            inputCard.classList.add('hidden');
+            loadingCard.classList.remove('hidden');
+
+            let index = 0;
+            const textInterval = setInterval(() => {
+                if (index < loadingTexts.length) {
+                    document.getElementById('loading-text').innerText = loadingTexts[index];
+                    index++;
+                }
+            }, 700);
+
+            // Yapay zeka simülasyonunu tamamla
+            setTimeout(() => {
+                clearInterval(textInterval);
+                calculateSensitivity();
+                loadingCard.classList.add('hidden');
+                resultsCard.classList.remove('hidden');
+            }, 4000);
         }
 
-    },8);
+        function calculateSensitivity() {
+            const brand = document.getElementById('brand').value;
+            const modelName = document.getElementById('model').value || 'Mobil Cihaz';
+            const style = document.getElementById('style').value;
+            const dpiUsage = document.getElementById('dpi-usage').value;
 
-}
+            // Baz değerleri belirleme (Yapay Zeka Mantığı)
+            let genel = 95;
+            let reddot = 92;
+            let scope2 = 88;
+            let scope4 = 85;
+            let awm = 50;
+            let freeLook = 75;
+            let fireButton = 45;
+            let dpi = "Varsayılan";
+            let aiComment = "";
 
-function glowButton(){
+            // 1. Cihaza göre varyasyon ekleme
+            if (brand === "iPhone") {
+                // iOS dokunma hassasiyeti yüksektir, çok yüksek hassasiyete gerek yoktur
+                genel = Math.floor(Math.random() * 8) + 88; // 88-95
+                reddot = genel - (Math.floor(Math.random() * 4) + 2);
+                scope2 = reddot - 4;
+                scope4 = scope2 - 3;
+                fireButton = Math.floor(Math.random() * 6) + 42; // 42-47
+                dpi = "DPI Gerekmez";
+            } else if (brand === "Xiaomi" || brand === "Infinix") {
+                // Xiaomi ve Infinix'lerde stabilite için hafif yüksek hassasiyet ve DPI istenir
+                genel = Math.floor(Math.random() * 5) + 96; // 96-100
+                reddot = genel - 2;
+                scope2 = Math.floor(Math.random() * 5) + 90;
+                scope4 = scope2 - 3;
+                fireButton = Math.floor(Math.random() * 5) + 45; // 45-49
+                if (dpiUsage === "yes") dpi = "550 DPI";
+            } else if (brand === "Samsung") {
+                genel = Math.floor(Math.random() * 4) + 97; // 97-100
+                reddot = 95;
+                scope2 = 91;
+                scope4 = 88;
+                fireButton = Math.floor(Math.random() * 5) + 48; // 48-52
+                if (dpiUsage === "yes") dpi = "510 DPI";
+            } else {
+                // Diğerleri
+                genel = 98;
+                reddot = 96;
+                scope2 = 93;
+                scope4 = 90;
+                fireButton = 47;
+                if (dpiUsage === "yes") dpi = "480 DPI";
+            }
 
-    const btn = document.getElementById("generate");
+            // 2. Oyun tarzına göre ince ayarlar
+            if (style === "one-shot") {
+                // Tekli vuruş için düşük ateş butonu ve dengeli stabil kızıl nokta gerek
+                fireButton = fireButton - 4; // Daha küçük buton sürükleme mesafesini artırır
+                reddot = reddot - 3; // Kafa üstüne nişanın uçmasını engellemek için biraz daha ağırlaştırılır
+                aiComment = `${modelName} cihazınızın ${style === 'one-shot' ? 'Tekli Vuruş' : ''} hassasiyeti kilitlendi. Desert Eagle ve M1887 vuruşlarında merminin kafanın üstüne sekmesini önlemek için "Kırmızı Nokta" hafifçe dengelendi. Ateş tuşunu ekranın en alt çizgisine yakınlaştırın.`;
+            } else if (style === "rush") {
+                // Agresif SMG için yüksek hassasiyet ve daha büyük buton
+                genel = Math.min(genel + 2, 100);
+                reddot = Math.min(reddot + 3, 100);
+                fireButton = fireButton + 2;
+                aiComment = `${modelName} cihazınızla yakın mesafede seri kafa vuruşları (SMG) yapabilmeniz için genel ekran hızı maksimum düzeye çekildi. Ekran kaydırma refleksiniz artacak, hızlı hareketler için harika bir ayar!`;
+            } else {
+                // Taktiksel
+                scope2 = scope2 + 2;
+                scope4 = scope4 + 3;
+                aiComment = `${modelName} cihazınızla uzak mesafeli AR silahlarıyla nokta atışı yapmanız için 2x ve 4x dürbün stabilitesi optimize edildi. Orta ve uzun menzildeki hedeflere dürbün açtığınızda nişangahınız otomatik olarak kafaya çekilecektir.`;
+            }
 
-    btn.innerHTML="✔ AI Tamamlandı";
+            // Değerleri Arayüze Yazdır
+            document.getElementById('device-output-label').innerText = `Cihaz: ${brand} (${modelName}) | Stil: ${style === 'one-shot' ? 'One-Shot' : style === 'rush' ? 'Rush' : 'Taktiksel'}`;
+            
+            animateValue("val-genel", 0, genel, 1000, "genel-bar");
+            animateValue("val-reddot", 0, reddot, 1000, "reddot-bar");
+            animateValue("val-scope2", 0, scope2, 1000, "scope2-bar");
+            animateValue("val-scope4", 0, scope4, 1000, "scope4-bar");
+            animateValue("val-awm", 0, awm, 1000, "awm-bar");
+            animateValue("val-free", 0, freeLook, 1000, "free-bar");
 
-    btn.style.boxShadow="0 0 40px #00ff99";
+            document.getElementById('val-btn').innerText = `%${fireButton}`;
+            document.getElementById('val-dpi').innerText = dpi;
+            document.getElementById('dpi-desc').innerText = dpi === "Varsayılan" || dpi === "DPI Gerekmez" ? "Cihazın kendi hızı yeterlidir" : "Geliştirici Seçeneklerinden ayarlayın";
+            document.getElementById('ai-comment').innerText = aiComment;
+        }
 
-    setTimeout(()=>{
+        // Değerlerin artarak gelmesini sağlayan animasyon fonksiyonu
+        function animateValue(id, start, end, duration, barId) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const currentVal = Math.floor(progress * (end - start) + start);
+                document.getElementById(id).innerText = currentVal;
+                if (barId) {
+                    document.getElementById(barId).style.width = `${currentVal}%`;
+                }
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
 
-        btn.innerHTML="AI İLE HESAPLA";
+        function resetApp() {
+            document.getElementById('results-card').classList.add('hidden');
+            document.getElementById('input-card').classList.remove('hidden');
+        }
 
-        btn.style.boxShadow="0 0 30px #ff2ebd";
+        function copySettings() {
+            const genel = document.getElementById('val-genel').innerText;
+            const reddot = document.getElementById('val-reddot').innerText;
+            const s2 = document.getElementById('val-scope2').innerText;
+            const s4 = document.getElementById('val-scope4').innerText;
+            const btn = document.getElementById('val-btn').innerText;
+            const dpi = document.getElementById('val-dpi').innerText;
 
-    },2500);
+            const text = `Wedzx V1 AI Free Fire Hassasiyet Ayarları:\n\nGenel: ${genel}\nKırmızı Nokta: ${reddot}\n2x Dürbün: ${s2}\n4x Dürbün: ${s4}\nAteş Butonu: ${btn}\nÖnerilen DPI: ${dpi}\n\nOyunun en iyi hassasiyeti Wedzx V1 ile oluşturuldu!`;
 
-}// WEDZX V2 - Phone Database
-
-const phoneDatabase = {
-
-Samsung: [
-"Galaxy A15",
-"Galaxy A16",
-"Galaxy A25",
-"Galaxy A35",
-"Galaxy A55",
-"Galaxy S23",
-"Galaxy S23 Ultra",
-"Galaxy S24",
-"Galaxy S24 Ultra",
-"Galaxy Z Fold 6"
-],
-
-Xiaomi: [
-"Redmi Note 12",
-"Redmi Note 13",
-"Redmi Note 14",
-"POCO X6",
-"POCO X6 Pro",
-"POCO F6",
-"POCO F6 Pro",
-"Xiaomi 14",
-"Xiaomi 14 Ultra"
-],
-
-Infinix: [
-"GT 10 Pro",
-"GT 20 Pro",
-"Note 40",
-"Note 40 Pro"
-],
-
-TECNO: [
-"Pova 5",
-"Pova 6",
-"Camon 30",
-"Camon 30 Pro"
-],
-
-Realme: [
-"Realme 11",
-"Realme 12 Pro",
-"Realme 12 Pro+",
-"GT 6",
-"GT 7"
-],
-
-iPhone: [
-"iPhone 13",
-"iPhone 13 Pro",
-"iPhone 14",
-"iPhone 14 Pro",
-"iPhone 15",
-"iPhone 15 Pro Max",
-"iPhone 16",
-"iPhone 16 Pro",
-"iPhone 16 Pro Max"
-]
-
-};<script src="phones.js"></script>
-<script src="script.js"></script>// ==============================
-// WEDZX V2 - AI Engine
-// ai.js
-// ==============================
-
-function calculateSensitivity(device) {
-
-    let general = 180;
-
-    // RAM etkisi
-    if (device.ram >= 12) general += 8;
-    else if (device.ram >= 8) general += 5;
-    else if (device.ram >= 6) general += 2;
-    else general -= 3;
-
-    // Ekran Hz etkisi
-    if (device.refreshRate >= 120) general += 5;
-    else if (device.refreshRate >= 90) general += 2;
-
-    // Oyun stili
-    switch (device.style) {
-        case "Headshot":
-            general += 6;
-            break;
-        case "Rush":
-            general += 3;
-            break;
-        case "Ranked":
-            general -= 2;
-            break;
-        case "Sniper":
-            general -= 10;
-            break;
-        default:
-            break;
-    }
-
-    general = Math.max(120, Math.min(general, 200));
-
-    return {
-        general,
-        redDot: Math.max(0, general - 8),
-        scope2: Math.max(0, general - 15),
-        scope4: Math.max(0, general - 35),
-        sniper: Math.max(0, general - 90),
-        freeLook: Math.max(0, general - 60)
-    };
-}
-
-// Örnek kullanım:
-// const result = calculateSensitivity({
-//     ram: 8,
-//     refreshRate: 120,
-//     style: "Headshot"
-// });
-// console.log(result);// =========================
-// WEDZX V2 FINAL EFFECTS
-// =========================
-
-const generateBtn = document.getElementById("generate");
-
-generateBtn.addEventListener("click", () => {
-
-    // Loading ekranı
-    generateBtn.disabled = true;
-    generateBtn.innerHTML = "🤖 AI Analiz Ediyor...";
-
-    let progress = 0;
-
-    const loading = setInterval(() => {
-
-        progress += 10;
-
-        generateBtn.innerHTML =
-        "🤖 AI Analiz Ediyor... " + progress + "%";
-
-        if(progress >= 100){
-
-            clearInterval(loading);
-
-            const result = calculateSensitivity({
-
-                ram:8,
-
-                refreshRate:120,
-
-                style:"Headshot"
-
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Hassasiyet ayarları panoya kopyalandı! Oyuna girip uygulayabilirsiniz.");
             });
-
-            document.getElementById("genel").innerHTML=result.general;
-            document.getElementById("reddot").innerHTML=result.redDot;
-            document.getElementById("scope2").innerHTML=result.scope2;
-            document.getElementById("scope4").innerHTML=result.scope4;
-            document.getElementById("sniper").innerHTML=result.sniper;
-            document.getElementById("freelook").innerHTML=result.freeLook;
-
-            generateBtn.innerHTML="✔ Hazır";
-
-            setTimeout(()=>{
-
-                generateBtn.disabled=false;
-                generateBtn.innerHTML="AI İLE HESAPLA";
-
-            },2000);
-
         }
-
-    },180);
-
-});
-
-// Kartlara giriş animasyonu
-
-const cards = document.querySelectorAll(".card,.result-card");
-
-const observer = new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.style.opacity="1";
-
-entry.target.style.transform="translateY(0px)";
-
-}
-
-});
-
-});
-
-cards.forEach(card=>{
-
-card.style.opacity="0";
-
-card.style.transform="translateY(50px)";
-
-card.style.transition=".8s";
-
-observer.observe(card);
-
-});
-
-// Neon logo efekti
-
-setInterval(()=>{
-
-const logo=document.querySelector(".logo");
-
-logo.style.textShadow="0 0 30px #ff2ebd";
-
-setTimeout(()=>{
-
-logo.style.textShadow="0 0 12px #ff2ebd";
-
-},700);
-
-},1500);
-
-// Arka plan hareket efekti
-
-let pos=0;
-
-setInterval(()=>{
-
-pos++;
-
-document.querySelector(".bg").style.backgroundPosition=
-`center ${pos}px`;
-
-},120);
+    </script>
+</body>
+</html>
