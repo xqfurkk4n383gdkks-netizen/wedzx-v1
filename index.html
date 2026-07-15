@@ -39,7 +39,7 @@
 </head>
 <body class="min-h-screen text-gray-200 flex flex-col justify-between">
 
-    <!-- TikTok Çift Takip Kilidi (Gate) -->
+    <!-- TikTok Takip Kilidi (Gate) -->
     <div id="tiktok-gate" class="fixed inset-0 bg-black/95 backdrop-blur-md z-50 flex items-center justify-center p-4 transition-all duration-500">
         <div class="bg-zinc-950 border border-red-500/30 p-8 rounded-2xl max-w-md w-full text-center neon-border relative overflow-hidden">
             <!-- Arka Plan Efekti -->
@@ -51,26 +51,18 @@
             </div>
             <h2 class="tech-font text-2xl font-black tracking-widest text-red-500 mb-2">ERİŞİM KİLİTLİ!</h2>
             <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                Wedzx V1 Yapay Zeka Hassasiyet Robotu'na erişmek için öncelikle aşağıdaki TikTok hesaplarını takip etmeniz gerekmektedir.
+                Wedzx V1 Yapay Zeka Hassasiyet Robotu'na erişmek için öncelikle TikTok'ta <span class="text-white font-bold">@wedzx_</span> hesabını takip etmeniz gerekmektedir.
             </p>
 
             <div class="space-y-3">
-                <!-- 1. Takip Butonu (@wedzx_) -->
-                <a href="https://www.tiktok.com/@wedzx_" target="_blank" onclick="userClickedFollow('wedzx')" class="block w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-bold py-3.5 rounded-xl tech-font tracking-wider shadow-lg shadow-red-600/20 active:scale-[0.98] transition">
+                <a href="https://www.tiktok.com/@wedzx_" target="_blank" onclick="userClickedFollow()" class="block w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-bold py-3.5 rounded-xl tech-font tracking-wider shadow-lg shadow-red-600/20 active:scale-[0.98] transition">
                     <i class="fa-brands fa-tiktok mr-2"></i> @WEDZX_ TAKİP ET
                 </a>
-                
-                <!-- 2. Takip Butonu (@tilkixz0) -->
-                <a href="https://www.tiktok.com/@tilkixz0" target="_blank" onclick="userClickedFollow('tilki')" class="block w-full bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white font-bold py-3.5 rounded-xl tech-font tracking-wider shadow-lg shadow-purple-600/20 active:scale-[0.98] transition">
-                    <i class="fa-brands fa-tiktok mr-2"></i> 120 FPS EDİT İÇİN @TILKIXZ0 TAKİP ET
-                </a>
-
-                <!-- Giriş Yap Butonu -->
                 <button id="verify-btn" disabled onclick="verifyTiktokFollow()" class="w-full bg-zinc-900 text-zinc-500 font-bold py-3.5 rounded-xl tech-font tracking-wider transition cursor-not-allowed">
                     TAKİP ETTİM, GİRİŞ YAP
                 </button>
             </div>
-            <p id="error-msg" class="text-red-500 text-xs mt-3 hidden">Lütfen önce her iki hesabı da "TAKİP ET" butonlarına basarak ziyaret edin!</p>
+            <p id="error-msg" class="text-red-500 text-xs mt-3 hidden">Lütfen önce "@WEDZX_ TAKİP ET" butonuna basarak hesabı ziyaret edin!</p>
         </div>
     </div>
 
@@ -275,36 +267,27 @@
     <!-- JavaScript Algoritması -->
     <script>
         // --- TIKTOK KİLİT SİSTEMİ MANTIĞI ---
-        let wedzxClicked = false;
-        let tilkiClicked = false;
+        let clickVerifyActive = false;
 
         // Sayfa ilk yüklendiğinde hafızada takip verisi var mı kontrol et
         window.addEventListener('DOMContentLoaded', () => {
-            if (localStorage.getItem('wedzx_followed_tiktok_v2') === 'true') {
+            if (localStorage.getItem('wedzx_followed_tiktok') === 'true') {
                 document.getElementById('tiktok-gate').classList.add('hidden');
             }
         });
 
-        // Kullanıcı "Takip Et" butonlarına bastığında tetiklenir
-        function userClickedFollow(type) {
-            if (type === 'wedzx') {
-                wedzxClicked = true;
-            } else if (type === 'tilki') {
-                tilkiClicked = true;
-            }
-
-            // İki butona da tıklanmışsa onay butonunu aktif et
-            if (wedzxClicked && tilkiClicked) {
-                const verifyBtn = document.getElementById('verify-btn');
-                verifyBtn.removeAttribute('disabled');
-                verifyBtn.className = "w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl tech-font tracking-wider active:scale-[0.98] transition cursor-pointer";
-                document.getElementById('error-msg').classList.add('hidden');
-            }
+        // Kullanıcı "Takip Et" butonuna bastığında tetiklenir
+        function userClickedFollow() {
+            clickVerifyActive = true;
+            const verifyBtn = document.getElementById('verify-btn');
+            verifyBtn.removeAttribute('disabled');
+            verifyBtn.className = "w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl tech-font tracking-wider active:scale-[0.98] transition cursor-pointer";
+            document.getElementById('error-msg').classList.add('hidden');
         }
 
         // Onay butonuna basıldığında simüle edilmiş kontrol yapar
         function verifyTiktokFollow() {
-            if (!wedzxClicked || !tilkiClicked) {
+            if (!clickVerifyActive) {
                 document.getElementById('error-msg').classList.remove('hidden');
                 return;
             }
@@ -319,8 +302,8 @@
                 setTimeout(() => {
                     document.getElementById('tiktok-gate').classList.add('hidden');
                 }, 500);
-                localStorage.setItem('wedzx_followed_tiktok_v2', 'true');
-            }, 2000); // 2 saniye sahte yüklenme süresi
+                localStorage.setItem('wedzx_followed_tiktok', 'true');
+            }, 2000); // 2 saniye sahte yüklenme süresi ekledik (gerçekçi dursun diye)
         }
 
 
