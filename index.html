@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedzx V1 | Free Fire AI Hassasiyet Robotu</title>
+    <title>Wedzx V1 | Free Fire AI Hassasiyet</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -15,68 +15,79 @@
 </head>
 <body class="min-h-screen text-gray-200">
 
-    <!-- GİRİŞ KİLİDİ (DUAL FOLLOW GATE) -->
+    <!-- KİLİT EKRANI -->
     <div id="tiktok-gate" class="fixed inset-0 bg-black/98 backdrop-blur-xl z-[999] flex items-center justify-center p-4">
         <div class="bg-zinc-950 border border-red-500/30 p-8 rounded-2xl max-w-sm w-full text-center neon-border">
-            <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce">
-                <i class="fa-solid fa-lock text-white text-2xl"></i>
-            </div>
             <h2 class="tech-font text-xl font-black text-white mb-6 uppercase tracking-widest">Erişim Kilitli</h2>
-            
             <div class="space-y-4">
-                <!-- Wedzx Button -->
-                <a id="btn-wedzx" href="https://www.tiktok.com/@wedzx_" target="_blank" onclick="markDone('wedzx')" class="block w-full bg-zinc-800 hover:bg-red-600 transition text-white font-bold py-3 rounded-xl border border-red-500/20 text-sm">
-                    <i class="fa-brands fa-tiktok mr-2"></i> @wedzx_ Takip Et
-                </a>
-
-                <!-- Tilkixz0 Button -->
-                <a id="btn-tilkixz0" href="https://www.tiktok.com/@tilkixz0" target="_blank" onclick="markDone('tilkixz0')" class="block w-full bg-zinc-800 hover:bg-purple-600 transition text-white font-bold py-3 rounded-xl border border-purple-500/20 text-sm">
-                    <i class="fa-brands fa-tiktok mr-2"></i> 120 FPS Edit için @tilkixz0 Takip Et
-                </a>
+                <a id="btn-wedzx" href="https://www.tiktok.com/@wedzx_" target="_blank" onclick="markDone('wedzx')" class="block w-full bg-zinc-800 hover:bg-red-600 transition text-white font-bold py-3 rounded-xl border border-red-500/20 text-sm">@wedzx_ Takip Et</a>
+                <a id="btn-tilkixz0" href="https://www.tiktok.com/@tilkixz0" target="_blank" onclick="markDone('tilkixz0')" class="block w-full bg-zinc-800 hover:bg-purple-600 transition text-white font-bold py-3 rounded-xl border border-purple-500/20 text-sm">120 FPS için @tilkixz0 Takip Et</a>
             </div>
-
-            <button id="enter-btn" disabled onclick="verifyAccess()" class="w-full mt-8 bg-zinc-900 text-zinc-600 font-bold py-4 rounded-xl tech-font tracking-widest cursor-not-allowed transition">
-                GİRİŞ YAPMAK İÇİN TAKİP ET
-            </button>
+            <button id="enter-btn" disabled onclick="verifyAccess()" class="w-full mt-8 bg-zinc-900 text-zinc-600 font-bold py-4 rounded-xl tech-font cursor-not-allowed">TAKİP ETTİKTEN SONRA GİR</button>
         </div>
     </div>
 
-    <!-- SİTE İÇERİĞİ (Aynı kalıyor) -->
-    <!-- ... (Header, Main, Form içeriğin buraya geliyor) ... -->
+    <!-- ANA İÇERİK -->
+    <main class="max-w-4xl mx-auto p-4 py-10">
+        <!-- Input Paneli -->
+        <div id="input-card" class="bg-black/60 p-8 rounded-2xl neon-border mb-8">
+            <h2 class="tech-font text-2xl font-black text-red-500 mb-6">CİHAZ ANALİZİ</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <select id="brand" class="bg-zinc-900 border border-zinc-700 p-3 rounded-lg text-white w-full">
+                    <option value="iPhone">iPhone (40-140 Limit)</option>
+                    <option value="Samsung">Samsung (100-200 Limit)</option>
+                    <option value="Xiaomi">Xiaomi/Poco (80-180 Limit)</option>
+                </select>
+                <input id="model" type="text" placeholder="Model Adı (Örn: A54, iPhone 15)" class="bg-zinc-900 border border-zinc-700 p-3 rounded-lg text-white w-full">
+            </div>
+            <button onclick="startAiAnalysis()" class="w-full mt-6 bg-red-600 hover:bg-red-500 py-4 rounded-xl font-bold tech-font tracking-widest text-white">HESAPLA</button>
+        </div>
+
+        <!-- SONUÇ PANELİ -->
+        <div id="results-card" class="hidden bg-black/60 p-8 rounded-2xl neon-border">
+            <h2 class="text-red-500 text-2xl font-bold mb-6">WEDZX V1 AI SONUÇLARI</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="bg-zinc-900 p-4 rounded-xl text-center"><p class="text-gray-400 text-xs">GENEL</p><h4 id="val-genel" class="text-3xl font-bold text-white">0</h4></div>
+                <div class="bg-zinc-900 p-4 rounded-xl text-center"><p class="text-gray-400 text-xs">KIRMIZI NOKTA</p><h4 id="val-reddot" class="text-3xl font-bold text-white">0</h4></div>
+                <div class="bg-zinc-900 p-4 rounded-xl text-center"><p class="text-gray-400 text-xs">2X DÜRBÜN</p><h4 id="val-scope2" class="text-3xl font-bold text-white">0</h4></div>
+            </div>
+            <button onclick="location.reload()" class="mt-8 w-full bg-zinc-800 py-3 rounded-lg text-white">YENİDEN HESAPLA</button>
+        </div>
+    </main>
 
     <script>
-        let wedzxFollowed = false;
-        let tilkixz0Followed = false;
-
+        // KİLİT MANTIĞI
+        let wedzxFollowed = false; let tilkixz0Followed = false;
         function markDone(id) {
-            if (id === 'wedzx') {
-                wedzxFollowed = true;
-                document.getElementById('btn-wedzx').classList.add('bg-red-600');
-            }
-            if (id === 'tilkixz0') {
-                tilkixz0Followed = true;
-                document.getElementById('btn-tilkixz0').classList.add('bg-purple-600');
-            }
-            
-            // Eğer ikisi de tamamlandıysa butonun rengini aç
+            if (id === 'wedzx') wedzxFollowed = true;
+            if (id === 'tilkixz0') tilkixz0Followed = true;
             if (wedzxFollowed && tilkixz0Followed) {
                 const btn = document.getElementById('enter-btn');
-                btn.disabled = false;
-                btn.className = "w-full mt-8 bg-gradient-to-r from-red-600 to-purple-600 text-white font-bold py-4 rounded-xl tech-font tracking-widest cursor-pointer hover:scale-[1.02] transition";
+                btn.disabled = false; btn.className = "w-full mt-8 bg-red-600 text-white font-bold py-4 rounded-xl cursor-pointer";
                 btn.innerText = "GİRİŞ YAP";
             }
         }
+        function verifyAccess() { document.getElementById('tiktok-gate').classList.add('hidden'); }
 
-        function verifyAccess() {
-            if (wedzxFollowed && tilkixz0Followed) {
-                document.getElementById('tiktok-gate').classList.add('hidden');
-            }
-        }
+        // HESAPLAMA MOTORU
+        function startAiAnalysis() {
+            const brand = document.getElementById('brand').value;
+            const resultsCard = document.getElementById('results-card');
+            
+            // Limitlere göre hesaplama
+            let minG = (brand === 'iPhone') ? 40 : 100;
+            let maxG = (brand === 'iPhone') ? 140 : 200;
 
-        // Sayfa yenilenirse veya tekrar girilirse otomatik açılmaması için
-        window.onload = () => {
-            // İstersen buraya localStorage kontrolü ekleyerek 
-            // takip edenin bir daha görmemesini sağlayabilirsin.
+            const genel = Math.floor(Math.random() * (maxG - minG + 1)) + minG;
+            const reddot = genel - 5;
+            const scope2 = genel - 10;
+
+            document.getElementById('val-genel').innerText = genel;
+            document.getElementById('val-reddot').innerText = reddot;
+            document.getElementById('val-scope2').innerText = scope2;
+            
+            document.getElementById('input-card').classList.add('hidden');
+            resultsCard.classList.remove('hidden');
         }
     </script>
 </body>
